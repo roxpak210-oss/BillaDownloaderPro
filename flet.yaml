@@ -1,3 +1,4 @@
 display_name: Billa Downloader
 product_name: BillaDownloader
 executable_name: billadownloader
+bundle_id: com.roxpak.billa
