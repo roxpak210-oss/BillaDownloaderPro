@@ -17,7 +17,6 @@ jobs:
           pip install flet-cli yt-dlp
 
       - name: Build APK
-        # This will search all folders for your main.py automatically
         run: |
           flet build apk --verbose
 
