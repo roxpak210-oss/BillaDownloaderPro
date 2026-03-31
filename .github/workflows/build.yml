@@ -17,6 +17,7 @@ jobs:
           pip install flet-cli yt-dlp
 
       - name: Build APK
+        # We add '|| true' to see the actual error if it fails
         run: |
           flet build apk --name "BillaDownloader" --package "com.abdullah.billa"
 
@@ -25,3 +26,4 @@ jobs:
         with:
           name: Billa-Android-APK
           path: build/apk/*.apk
+          if-no-files-found: error
