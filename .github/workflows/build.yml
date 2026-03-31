@@ -18,10 +18,10 @@ jobs:
 
       - name: Build APK
         run: |
-          flet build apk
+          flet build apk --verbose
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: Billa-Android-APK
-          path: build/apk/*.apk
+          path: "**/build/apk/*.apk"
