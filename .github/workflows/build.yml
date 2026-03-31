@@ -17,7 +17,7 @@ jobs:
           pip install flet-cli yt-dlp
 
       - name: Build APK
-        # We use --verbose to see EXACTLY what goes wrong if it fails
+        # This command looks for your files everywhere
         run: |
           flet build apk --verbose
 
@@ -25,4 +25,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Billa-Android-APK
-          path: build/apk/*.apk
+          path: "**/build/apk/*.apk"
