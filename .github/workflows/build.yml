@@ -17,9 +17,9 @@ jobs:
           pip install flet-cli yt-dlp
 
       - name: Build APK
-        # We removed the extra labels that caused the error
+        # We use --verbose to see EXACTLY what goes wrong if it fails
         run: |
-          flet build apk
+          flet build apk --verbose
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
