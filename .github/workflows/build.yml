@@ -1,0 +1,27 @@
+name: Build Billa APK
+on: [push]
+
+jobs:
+  android-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Tools
+        run: |
+          pip install flet-cli yt-dlp
+
+      - name: Build APK
+        run: |
+          flet build apk --name "BillaDownloader" --package "com.abdullah.billa"
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Billa-Android-APK
+          path: build/apk/*.apk
