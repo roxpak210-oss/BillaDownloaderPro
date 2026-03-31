@@ -17,8 +17,9 @@ jobs:
           pip install flet-cli yt-dlp
 
       - name: Build APK
+        # Added --yes so the robot doesn't wait for your input
         run: |
-          flet build apk --verbose
+          flet build apk --yes --verbose
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
